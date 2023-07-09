@@ -13,7 +13,7 @@ class GalleryRepository implements IGalleryRepository {
   @override
   Future<List<GalleryModel>> getGalleryList({required int pageNo}) async {
     var result = await dio.get(
-        '/galleryList1?pageNo=$pageNo&MobileApp=viceversa&MobileOS=IOS&_type=json&serviceKey=$serviceKey');
+        '/galleryList1?pageNo=$pageNo&MobileApp=viceversa&MobileOS=$mobileOS&_type=json&serviceKey=$serviceKey');
     if (result.data != null) {
       var list = result.data['response']['body']['items']['item'];
       return list.map<GalleryModel>((e) => GalleryModel.fromJson(e)).toList();
@@ -25,7 +25,7 @@ class GalleryRepository implements IGalleryRepository {
   Future<GalleryModel?> getGalleryDetail({required String title}) async {
     var parsedTitle = Uri.encodeComponent(title);
     var result = await dio.get(
-        '/galleryDetailList1?title=$parsedTitle&MobileApp=viceversa&MobileOS=IOS&_type=json&serviceKey=$serviceKey');
+        '/galleryDetailList1?title=$parsedTitle&MobileApp=viceversa&MobileOS=$mobileOS&_type=json&serviceKey=$serviceKey');
 
     if (result.data['response']['body']['items'] != '') {
       var list = result.data['response']['body']['items']['item'];
