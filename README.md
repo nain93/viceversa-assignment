@@ -7,6 +7,9 @@ dart run build_runner build --delete-conflicting-outputs /// freezed 모델 빌�
 flutter run
 ```
 
+## 데모
+![Simulator Screen Recording - iPhone 14 Pro Max - 2023-07-09 at 16 18 30](https://github.com/nain93/viceversa-assignment/assets/73378472/00746fcb-0e22-419f-b206-13ac4e04b64a)
+
 ## 구현 기술
 - 그리드 이미지 뷰 리스트 구현
 - 페이지네이션 구현
